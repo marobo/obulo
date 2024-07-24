@@ -1,6 +1,14 @@
-{% extends 'base_site.html' %}
+{% extends base_template %}
 
 {% block content %}
     <H1>Hello world!</H1>
-    <a href="{% url 'create_account' %}">Create New Account</a>
+    <p>Your content goes here...</p>
+    <a
+        hx-get="{% url 'aldeia_list' %}"
+        hx-swap="outerHTML"
+        hx-target="#index-content"
+        hx-push-url="true"
+    >
+       View Aldeias
+    </a>
 {% endblock %}

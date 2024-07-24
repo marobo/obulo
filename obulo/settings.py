@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'user_profile',
+    'suco_obulo',
 ]
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
