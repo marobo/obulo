@@ -1,0 +1,12 @@
+{% extends base_template %}
+
+{% block content %}
+<h2>Detail Aldia Goes Here...</h2>
+    <a hx-get="{% url 'index' %}"
+        hx-target="#index-content"
+        hx-swap="outerHTML"
+        hx-push-url="true"
+    >
+        Back home
+    </a>
+{% endblock %}

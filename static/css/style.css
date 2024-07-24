@@ -1,3 +1,9 @@
+a, a:not([href]):not([class]) {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .navbar {
     background-color: aliceblue;
 }

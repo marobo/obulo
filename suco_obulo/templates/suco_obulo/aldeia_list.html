@@ -1,0 +1,77 @@
+{% extends base_template %}
+
+{% block content %}
+<h2>List of Aldeias</h2>
+<ul>
+    <li>
+        <a 
+            hx-get="{% url 'aldeia_detail' %}"
+            hx-swap="outerHTML"
+            hx-target="#index-content"
+            hx-push-url="true"
+        >
+        Atubrao
+        </a>
+    </li>
+    <li>
+        <a 
+            hx-get="{% url 'aldeia_detail' %}"
+            hx-swap="outerHTML"
+            hx-target="#index-content"
+            hx-push-url="true"
+        >
+        Atulara
+        </a>
+    </li>
+    <li>
+        <a 
+            hx-get="{% url 'aldeia_detail' %}"
+            hx-swap="outerHTML"
+            hx-target="#index-content"
+            hx-push-url="true"
+        >
+        Biliubu
+        </a>
+    </li>
+    <li>
+        <a 
+            hx-get="{% url 'aldeia_detail' %}"
+            hx-swap="outerHTML"
+            hx-target="#index-content"
+            hx-push-url="true"
+        >
+        Lacoubu
+        </a>
+    </li>
+    <li>
+        <a 
+            hx-get="{% url 'aldeia_detail' %}"
+            hx-swap="outerHTML"
+            hx-target="#index-content"
+            hx-push-url="true"
+        >
+        Motoubu
+        </a>
+    </li>
+    <li>
+        <a 
+            hx-get="{% url 'aldeia_detail' %}"
+            hx-swap="outerHTML"
+            hx-target="#index-content"
+            hx-push-url="true"
+        >
+        Obeto
+        </a>
+    </li>
+    <li>
+        <a 
+            hx-get="{% url 'aldeia_detail' %}"
+            hx-swap="outerHTML"
+            hx-target="#index-content"
+            hx-push-url="true"
+        >
+        Suriubu
+        </a>
+    </li>
+</ul>
+{% endblock %}
