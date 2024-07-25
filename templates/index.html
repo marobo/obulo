@@ -1,14 +1,51 @@
 {% extends base_template %}
 
+{% load static %}
+
+{% block title %}
+    <title>Suco Obulo</title>
+{% endblock %}
+
 {% block content %}
-    <H1>Hello world!</H1>
-    <p>Your content goes here...</p>
-    <a
-        hx-get="{% url 'aldeia_list' %}"
-        hx-swap="outerHTML"
-        hx-target="#index-content"
-        hx-push-url="true"
-    >
-       View Aldeias
-    </a>
+    <h2>Welcome to suco Obulo</h2>
+    <div class="obulo">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'img/geography.jpg' %}" />
+            </div>
+            <div class="col-md-6">
+                <h5>Geography</h5>
+                <p>Before the 2015 administrative reform, Obulo had an area of ​​8.82 km². Now it is 5.27 km². The suco is located in the southwest of the administrative post of Atsabe. To the north are the sucos Laubono and Lacao and to the east is the suco Atara. To the south and west, Obulo borders on the administrative post of Bobonaro , which belongs to the municipality of Bobonaro, with its sucos Soileco and Maliubu. The border with Bobonaro is formed by rivers such as the Babalai and the Bulobu. They belong to the Lóis system.
+                    In the northeast of Obulo are the villages of Locoubu (Lakubu), Atubrao (Atubrau), Obeto , Motoubu and Atulara. In the center is the village of Biliubu (Biliubu) and in the south is the village of Suriubu (Siriubu).</p>
+                <p>In the Suco are the seven aldeias Atubrao , Atulara , Biliubu , Locoubu , Motoubu , Obeto and Suriubu.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Resident</h5>
+                <p>The Suco has a population of 994 (Census 2022), of which 492 are men and 502 are women. There are 350 households in the Suco. Over 97% of the inhabitants say Kemak is their mother tongue. Minorities speak Tetum Prasa, Kemak. In Obulo , as in Marobo (Bobonaro municipality), the Kemak have mixed with the neighboring Bunak. Marobo and Obulo therefore maintain close relations with each other.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/resident.jpg' %}" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="{% static 'img/story.jpg' %}" />
+            </div>
+            <div class="col-md-6">
+                <h5>Story</h5>
+                <p>In March 1895, Governor José Celestino da Silva led an offensive against Obulo and Marobo, which was closely allied with him , in order to finally subjugate them for Portugal. It was not until May that Obulo was defeated. The commanding captain, Eduardo da Câmara, reported that the inhabitants of Obulo were very skilled at waging war. They could throw the zagaia 50 meters to knock down a man and were also fearless with the sword. They could only be dispersed with rifle fire.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <h5>Location</h5>
+                <p>To the south and west, Obulo borders on the administrative post of Bobonaro , which belongs to the municipality of Bobonaro, with its sucos Soileco and Maliubu. The border with Bobonaro is formed by rivers such as the Babalai and the Bulobu. They belong to the Lóis system.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="{% static 'img/Obulo_suco.png' %}" />
+            </div>
+        </div>
+    </div>
 {% endblock %}

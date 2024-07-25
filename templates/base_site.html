@@ -3,12 +3,24 @@
 {% block header %}
 <nav class="navbar bg-body-tertiary">
     <div class="container">
-        <a href="/" class="navbar-brand">Navbar</a>
-        <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
-        <a  href="{% url 'create_account' %}">Sign Up</a>
+        <a href="/" class="navbar-brand">Obulo</a>
+        <div class="ms-auto">
+            <a  href="#">Tourism</a> |
+            <a  href="#">Protected areas</a> |
+            <a  href="#">People & culture</a> |
+            <a  href="#">Nature & wildlife</a> |
+            <a  href="#">Local Market</a> |
+            <a
+                hx-get="{% url 'aldeia_list' %}"
+                hx-swap="outerHTML"
+                hx-target="#index-content"
+                hx-push-url="true"
+            >
+            Aldeias
+            </a> |
+            <a  href="{% url 'create_account' %}">Sign up</a> |
+            <a  href="{% url 'login' %}">Sign in</a>
+        </div>
     </div>
 </nav>
 {% endblock %}
@@ -18,7 +30,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2024 Copyright:
-        <a class="text-white" target="_blank" href="https://pykafe.org/">pykafe.org</a>
+        <a class="text-white" target="_blank" href="https://onydev.pykafe.org/">onydev.pykafe.org</a> | Resource: <a  class="text-white" href="https://de.wikipedia.org/wiki/Obulo" target="_blank">wikipedia.org</a>
     </div>
     <!-- Copyright -->
 </footer>
