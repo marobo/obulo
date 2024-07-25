@@ -4,6 +4,27 @@ a, a:not([href]):not([class]) {
     cursor: pointer;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.obulo .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    margin-top: 2%;
+    margin-bottom: 5%;
+    padding-bottom: 30px;
+    padding-top: 30px;
+    border-bottom: 1px solid #959525db;
+}
+
 .navbar {
     background-color: aliceblue;
+}
+
+.navbar-brand {
+    color: #959525db;
 }

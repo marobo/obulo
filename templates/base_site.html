@@ -5,6 +5,14 @@
     <div class="container">
         <a href="/" class="navbar-brand">Obulo</a>
         <span class="navbar-text">
+            <a
+                hx-get="{% url 'aldeia_list' %}"
+                hx-swap="outerHTML"
+                hx-target="#index-content"
+                hx-push-url="true"
+            >
+            Aldeias
+            </a> |
             <a  href="{% url 'create_account' %}">Sign up</a> |
             <a  href="{% url 'login' %}">Sign in</a>
         </span>
@@ -17,7 +25,7 @@
     <!-- Copyright -->
     <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
         © 2024 Copyright:
-        <a class="text-white" target="_blank" href="https://pykafe.org/">pykafe.org</a>
+        <a class="text-white" target="_blank" href="https://onydev.pykafe.org/">onydev.pykafe.org</a> | Resource: <a  class="text-white" href="https://de.wikipedia.org/wiki/Obulo" target="_blank">wikipedia.org</a>
     </div>
     <!-- Copyright -->
 </footer>
