@@ -4,7 +4,12 @@
 <nav class="navbar bg-body-tertiary">
     <div class="container">
         <a href="/" class="navbar-brand">Obulo</a>
-        <span class="navbar-text">
+        <div class="ms-auto">
+            <a  href="#">Tourism</a> |
+            <a  href="#">Protected areas</a> |
+            <a  href="#">People & culture</a> |
+            <a  href="#">Nature & wildlife</a> |
+            <a  href="#">Local Market</a> |
             <a
                 hx-get="{% url 'aldeia_list' %}"
                 hx-swap="outerHTML"
@@ -15,7 +20,7 @@
             </a> |
             <a  href="{% url 'create_account' %}">Sign up</a> |
             <a  href="{% url 'login' %}">Sign in</a>
-        </span>
+        </div>
     </div>
 </nav>
 {% endblock %}
