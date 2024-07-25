@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from .models import Post
+
 
 def _base_template(request):
 
@@ -9,6 +11,15 @@ def _base_template(request):
         base_template = 'base_site.html'
 
     return base_template
+
+
+def index(request):
+    base_template = _base_template(request)
+    posts = Post.objects.all().order_by('created_on')
+
+
+    return render(request, 'index.html', {'base_template': base_template, 'posts': posts})
+
 
 
 def list_aldeia_view(request):

@@ -9,14 +9,6 @@ from django.core.mail import EmailMessage
 from .tokens import account_activation_token
 from .forms import SignupForm
 
-from suco_obulo.views import _base_template
-
-
-def index(request):
-    base_template = _base_template(request)
-
-    return render(request, 'index.html', {'base_template': base_template})
-
 
 def create_account(request):
     if request.method == 'POST':
