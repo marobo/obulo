@@ -14,12 +14,16 @@ def _base_template(request):
 
 
 def index(request):
+
     base_template = _base_template(request)
     posts = Post.objects.all().order_by('created_on')
 
+    content = {
+        'base_template': base_template,
+        'posts': posts,
+    }
 
-    return render(request, 'index.html', {'base_template': base_template, 'posts': posts})
-
+    return render(request, 'index.html', content)
 
 
 def list_aldeia_view(request):
