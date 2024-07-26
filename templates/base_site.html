@@ -5,13 +5,32 @@
     <div class="container">
         <a href="/" class="navbar-brand">Obulo</a>
         <div class="ms-auto">
-            <a  href="#">Tourism</a> |
-            <a  href="#">Protected areas</a> |
-            <a  href="#">People & culture</a> |
-            <a  href="#">Nature & wildlife</a> |
-            <a  href="#">Local Market</a> |
             <a
-                hx-get="{% url 'aldeia_list' %}"
+                hx-get="/"
+                hx-swap="outerHTML"
+                hx-target="#index-content"
+                hx-push-url="true"
+            >
+            About
+            </a> |
+            <a
+                hx-get="{% url 'nature_and_tourism' %}"
+                hx-swap="outerHTML"
+                hx-target="#index-content"
+                hx-push-url="true"
+            >
+            Nature & Tourism
+            </a> |
+            <a
+                hx-get="{% url 'people_and_culture' %}"
+                hx-swap="outerHTML"
+                hx-target="#index-content"
+                hx-push-url="true"
+            >
+            People & Culture
+            </a> |
+            <a
+                hx-get="{% url 'aldeias' %}"
                 hx-swap="outerHTML"
                 hx-target="#index-content"
                 hx-push-url="true"
