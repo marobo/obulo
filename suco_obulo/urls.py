@@ -7,6 +7,6 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('aldeias', views.aldeias_view, name='aldeias'),
-    path('nature-and-tourism', views.nature_and_tourism_view, name='nature_and_tourism'),
-    path('people-and-culture', views.people_and_culture_view, name='people_and_culture'),
+    path('nature-tourism', views.nature_and_tourism_view, name='nature_and_tourism'),
+    path('people-culture', views.people_and_culture_view, name='people_and_culture'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
