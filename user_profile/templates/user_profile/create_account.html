@@ -1,6 +1,13 @@
+{% extends base_template %}
+
+{% block title %}
+    <title>Create you account</title>
+{% endblock %}
+
+{% block content %}
 <form method="post" action="{% url 'create_account' %}">
     {% csrf_token %}
-    <h1>Create your new account</h1>
+    <h1>Create your account</h1>
     <div>
         {{ form.username.label_tag }}
         {{ form.username }}
@@ -22,5 +29,6 @@
         {{ form.password2 }}
         {{ form.password2.errors }}
     </div>
-    <button type="submit">Create new account</button>
+    <button type="submit" class="btn btn-primary btn-sm">Create new account</button>
 </form>
+{% endblock %}
