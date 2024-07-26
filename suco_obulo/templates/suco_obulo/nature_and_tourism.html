@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block content %}
-    <h2>Tourism</h2>
-    <p>Local tourism in suco Obulo</p>
+    <h2>Nature & Tourism</h2>
+    <p>Nature & Tourism in suco Obulo</p>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.category.name == 'Tourism' %}
+        {% if post.category.name == 'Nature & Tourism' %}
         <div class="row">
             <div class="col-md-6">
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">
