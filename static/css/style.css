@@ -32,3 +32,8 @@ img {
 .navbar-brand {
     color: #959525db;
 }
+
+.navbar-left a {
+    margin-left: 6px;
+    margin-right: 6px;
+}

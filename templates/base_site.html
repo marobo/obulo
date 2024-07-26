@@ -4,41 +4,47 @@
 <nav class="navbar bg-body-tertiary">
     <div class="container">
         <a href="/" class="navbar-brand">Obulo</a>
-        <div class="ms-auto">
+        <div class="navbar-left ms-auto">
             <a
                 hx-get="/"
                 hx-swap="outerHTML"
                 hx-target="#index-content"
                 hx-push-url="true"
             >
-            About
-            </a> |
+                About
+            </a>
             <a
                 hx-get="{% url 'nature_and_tourism' %}"
                 hx-swap="outerHTML"
                 hx-target="#index-content"
                 hx-push-url="true"
             >
-            Nature & Tourism
-            </a> |
+                Nature & Tourism
+            </a>
             <a
                 hx-get="{% url 'people_and_culture' %}"
                 hx-swap="outerHTML"
                 hx-target="#index-content"
                 hx-push-url="true"
             >
-            People & Culture
-            </a> |
+                People & Culture
+            </a>
             <a
                 hx-get="{% url 'aldeias' %}"
                 hx-swap="outerHTML"
                 hx-target="#index-content"
                 hx-push-url="true"
             >
-            Aldeias
-            </a> |
-            <a  href="{% url 'create_account' %}">Sign up</a> |
-            <a  href="{% url 'login' %}">Sign in</a>
+                Aldeias
+            </a>
+            <a class="btn btn-outline-primary btn-sm"
+                hx-get="{% url 'create_account' %}"
+                hx-swap="outerHTML"
+                hx-target="#index-content"
+                hx-push-url="true"
+            >
+                Sign up</a> |
+            <a class="btn btn-primary btn-sm" href="{% url 'login' %}">Sign in</a>
         </div>
     </div>
 </nav>

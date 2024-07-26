@@ -8,6 +8,7 @@ from django.core.mail import EmailMessage
 
 from .tokens import account_activation_token
 from .forms import SignupForm
+from suco_obulo.views import _base_template
 
 
 def create_account(request):
@@ -34,8 +35,9 @@ def create_account(request):
             email.send()
             return render(request, 'user_profile/create_account_done.html')
     else:
+        base_template = _base_template(request)
         form = SignupForm()
-    return render(request, 'user_profile/create_account.html', {'form': form})
+    return render(request, 'user_profile/create_account.html', {'form': form, 'base_template': base_template})
 
 
 def activate(request, uidb64, token):
