@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Post
+from .models import Category, Post
 
 
 def _base_template(request):
@@ -18,29 +18,49 @@ def index(request):
     base_template = _base_template(request)
     posts = Post.objects.all().order_by('created_on')
 
-    content = {
+    context = {
         'base_template': base_template,
         'posts': posts,
     }
 
-    return render(request, 'index.html', content)
+    return render(request, 'index.html', context)
 
 
-def list_aldeia_view(request):
+def aldeias_view(request):
     base_template = _base_template(request)
 
     context = {
         'base_template': base_template,
     }
 
-    return render(request, 'suco_obulo/aldeia_list.html', context)
+    return render(request, 'suco_obulo/aldeias.html', context)
 
 
-def detail_aldeia_view(request):
+def nature_and_tourism_view(request):
+
     base_template = _base_template(request)
+    posts = Post.objects.all().order_by('created_on')
+    categories = Category.objects.all()
 
     context = {
         'base_template': base_template,
+        'posts': posts,
+        'categories': categories,
     }
 
-    return render(request, 'suco_obulo/aldeia_detail.html', context)
+    return render(request, 'suco_obulo/nature_and_tourism.html', context)
+
+
+def people_and_culture_view(request):
+
+    base_template = _base_template(request)
+    posts = Post.objects.all().order_by('created_on')
+    categories = Category.objects.all()
+
+    context = {
+        'base_template': base_template,
+        'posts': posts,
+        'categories': categories,
+    }
+
+    return render(request, 'suco_obulo/people_and_culture.html', context)

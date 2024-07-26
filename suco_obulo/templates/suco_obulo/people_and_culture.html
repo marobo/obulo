@@ -1,16 +1,15 @@
 {% extends base_template %}
 
-{% load static %}
-
 {% block title %}
-    <title>Suco Obulo</title>
+    <title>Tourism</title>
 {% endblock %}
 
 {% block content %}
-    <h2>Welcome to suco Obulo</h2>
+    <h2>Pople & Culture</h2>
+    <p>Pople & Culture in suco Obulo</p>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.category.name == 'About' %}
+        {% if post.category.name == 'People & Culture' %}
         <div class="row">
             <div class="col-md-6">
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">
