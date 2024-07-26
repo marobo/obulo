@@ -6,7 +6,11 @@ a, a:not([href]):not([class]) {
 
 img {
     max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 500px;
+    object-position: center;
+    object-fit: cover;
+    border-radius: 0px;
 }
 
 .obulo .row {
