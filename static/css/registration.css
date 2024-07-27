@@ -83,3 +83,25 @@ label {
 .errorlist > li {
     display: inline;
 }
+
+@media only screen and (max-width: 1200px) {
+    .container.registration_content {
+        max-width: 60%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container.registration_content {
+        max-width: 80%;
+    }
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+}
