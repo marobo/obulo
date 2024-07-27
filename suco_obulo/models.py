@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+from suco_obulo.thumbnail_img import make_thumbnail
+
 
 class Category(models.Model):
     name = models.CharField(max_length=128, unique=True)
@@ -20,3 +22,8 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
+    # Save image in small quality
+    def save(self, *args, **kwargs):
+        self.image = make_thumbnail(self.image, size=(1200, 1200))
+        return super().save(*args, **kwargs)
