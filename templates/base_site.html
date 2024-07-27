@@ -37,13 +37,7 @@
             >
                 Aldeias
             </a>
-            <a class="btn btn-outline-primary btn-sm"
-                hx-get="{% url 'create_account' %}"
-                hx-swap="outerHTML"
-                hx-target="#index-content"
-                hx-push-url="true"
-            >
-                Sign up</a> |
+            <a class="btn btn-outline-primary btn-sm" href="{% url 'create_account' %}">Sign up</a> |
             <a class="btn btn-primary btn-sm" href="{% url 'login' %}">Sign in</a>
         </div>
     </div>
