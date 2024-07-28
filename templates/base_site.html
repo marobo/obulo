@@ -37,8 +37,13 @@
             >
                 Aldeias
             </a>
+            {% if user.is_authenticated %}
+            Welcome {{ user.first_name|default:user.username }} |
+            <a class="btn btn-outline-primary btn-sm" href="{% url 'logout' %}">Log out</a>
+            {% else %}
             <a class="btn btn-outline-primary btn-sm" href="{% url 'create_account' %}">Sign up</a> |
             <a class="btn btn-primary btn-sm" href="{% url 'login' %}">Sign in</a>
+            {% endif %}
         </div>
     </div>
 </nav>
