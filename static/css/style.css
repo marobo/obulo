@@ -13,16 +13,19 @@ img {
     border-radius: 0px;
 }
 
+.page-title {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 .obulo .row {
-    display: flex;
-    flex-wrap: wrap;
-    margin-right: -15px;
-    margin-left: -15px;
-    margin-top: 2%;
-    margin-bottom: 5%;
-    padding-bottom: 30px;
-    padding-top: 30px;
+    padding-bottom: 1rem;
+    margin-bottom: 4rem;
     border-bottom: 1px solid #959525db;
+}
+
+.obulo .row .col-md-6 {
+    margin-bottom: 2rem;
 }
 
 .navbar {
