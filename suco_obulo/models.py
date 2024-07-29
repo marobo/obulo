@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from suco_obulo.thumbnail_img import make_thumbnail
 
 
-class Category(models.Model):
+class Page(models.Model):
     name = models.CharField(max_length=128, unique=True)
 
     def __str__(self):
@@ -16,7 +16,7 @@ class Post(models.Model):
     overview = models.TextField()
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     image = models.ImageField(upload_to="media/obulo_images")
-    category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.CASCADE)
+    page = models.ForeignKey(Page, null=True, blank=True, on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)
     modified_on = models.DateTimeField(auto_now=True)
 

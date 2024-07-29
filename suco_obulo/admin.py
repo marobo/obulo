@@ -1,11 +1,11 @@
 from django.contrib import admin
-from .models import Post, Category
+from .models import Post, Page
 
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'category', 'author')
+    list_display = ('title', 'page', 'author')
     fieldsets = [
-        (None, {'fields': [('title', 'overview', 'image', 'category')]}),
+        (None, {'fields': [('title', 'overview', 'image', 'page')]}),
     ]
 
     def save_model(self, request, obj, form, change):
@@ -15,4 +15,4 @@ class PostAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Post, PostAdmin)
-admin.site.register(Category)
+admin.site.register(Page)

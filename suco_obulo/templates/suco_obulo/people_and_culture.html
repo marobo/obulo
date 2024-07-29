@@ -9,7 +9,7 @@
     <p>Pople & Culture in suco Obulo</p>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.category.name == 'People & Culture' %}
+        {% if post.page.name == 'People & Culture' %}
         <div class="row">
             <div class="col-md-6">
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">

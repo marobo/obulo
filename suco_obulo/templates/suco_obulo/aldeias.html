@@ -9,7 +9,7 @@
     <p>All Aldeias in suco Obulo</p>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.category.name == 'Aldeias' %}
+        {% if post.page.name == 'Aldeias' %}
         <div class="row">
             <div class="col-md-6">
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">
