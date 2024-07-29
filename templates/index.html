@@ -10,7 +10,7 @@
     <h2>Welcome to suco Obulo</h2>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.category.name == 'About' %}
+        {% if post.page.name == 'About' %}
         <div class="row">
             <div class="col-md-6">
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">

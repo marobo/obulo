@@ -9,7 +9,7 @@
     <p>Nature & Tourism in suco Obulo</p>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.category.name == 'Nature & Tourism' %}
+        {% if post.page.name == 'Nature & Tourism' %}
         <div class="row">
             <div class="col-md-6">
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">
