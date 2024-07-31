@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load language_selector %}
 
 {% block header %}
 <nav class="navbar bg-body-tertiary">
@@ -44,6 +45,13 @@
             <a class="btn btn-outline-primary btn-sm" href="{% url 'create_account' %}">Sign up</a> |
             <a class="btn btn-primary btn-sm" href="{% url 'login' %}">Sign in</a>
             {% endif %}
+
+            <form action="{% url 'set_language' %}" method="post" id="form_{{ LANGUAGE_CODE|new_lang_code }}">
+                {% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}"/>
+                <input name="language" type="hidden" value="{{ LANGUAGE_CODE|new_lang_code }}"/>
+            </form>
+            <button class="btn btn-sm btn-outline-primary" type="submit" form="form_{{ LANGUAGE_CODE|new_lang_code }}" value="Submit">{{ LANGUAGE_CODE|new_lang_name }}</button>
         </div>
     </div>
 </nav>
