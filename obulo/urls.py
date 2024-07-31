@@ -22,7 +22,6 @@ from django.urls import path, include
 
 urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
-    path('', include('user_profile.urls')), # New app urls
     path('', include('suco_obulo.urls')), # New app urls
     path('accounts/', include('django.contrib.auth.urls')), # New or maybe you have added already
     path('i18n/', include('django.conf.urls.i18n')),
