@@ -2,42 +2,64 @@
 {% load language_selector %}
 
 {% block header %}
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+    <!-- Container wrapper -->
     <div class="container">
-        <a href="/" class="navbar-brand">Obulo</a>
-        <div class="navbar-left ms-auto">
-            <a
-                hx-get="/"
-                hx-swap="outerHTML"
-                hx-target="#index-content"
-                hx-push-url="true"
-            >
-                About
-            </a>
-            <a
-                hx-get="{% url 'nature_and_tourism' %}"
-                hx-swap="outerHTML"
-                hx-target="#index-content"
-                hx-push-url="true"
-            >
-                Nature & Tourism
-            </a>
-            <a
-                hx-get="{% url 'people_and_culture' %}"
-                hx-swap="outerHTML"
-                hx-target="#index-content"
-                hx-push-url="true"
-            >
-                People & Culture
-            </a>
-            <a
-                hx-get="{% url 'aldeias' %}"
-                hx-swap="outerHTML"
-                hx-target="#index-content"
-                hx-push-url="true"
-            >
-                Aldeias
-            </a>
+        <!-- Toggle button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collapsible wrapper -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <!-- Navbar brand -->
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <a class="navbar-brand mt-2 mt-lg-0" href="/">Obulo</a>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        hx-get="/"
+                        hx-swap="outerHTML"
+                        hx-target="#index-content"
+                        hx-push-url="true"
+                    >
+                        About
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        hx-get="{% url 'nature_and_tourism' %}"
+                        hx-swap="outerHTML"
+                        hx-target="#index-content"
+                        hx-push-url="true"
+                    >
+                        Nature & Tourism
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        hx-get="{% url 'people_and_culture' %}"
+                        hx-swap="outerHTML"
+                        hx-target="#index-content"
+                        hx-push-url="true"
+                    >
+                        People & Culture
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"
+                        hx-get="{% url 'aldeias' %}"
+                        hx-swap="outerHTML"
+                        hx-target="#index-content"
+                        hx-push-url="true"
+                    >
+                        Aldeias
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Collapsible wrapper -->
+
+        <!-- Right elements -->
+        <div class="d-flex align-items-center">
             {% if user.is_authenticated %}
             Welcome {{ user.first_name|default:user.username }} |
             <a class="btn btn-outline-primary btn-sm" href="{% url 'logout' %}">Log out</a>
@@ -51,7 +73,7 @@
                 <input name="next" type="hidden" value="{{ redirect_to }}"/>
                 <input name="language" type="hidden" value="{{ LANGUAGE_CODE|new_lang_code }}"/>
             </form>
-            <button class="btn btn-sm btn-outline-primary" type="submit" form="form_{{ LANGUAGE_CODE|new_lang_code }}" value="Submit">{{ LANGUAGE_CODE|new_lang_name }}</button>
+            <button class="btn btn-sm btn-outline-success" type="submit" form="form_{{ LANGUAGE_CODE|new_lang_code }}" value="Submit">{{ LANGUAGE_CODE|new_lang_name }}</button>
         </div>
     </div>
 </nav>
