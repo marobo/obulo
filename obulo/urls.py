@@ -15,12 +15,17 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.urls import path, include
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path('admin/', admin.site.urls),
-    path('', include('user_profile.urls')), # New app urls
-    path('', include('suco_obulo.urls')), # New app urls
-    path('accounts/', include('django.contrib.auth.urls')), # New or maybe you have added already
-]
+    path('', include('suco_obulo.urls')),
+    path('i18n/', include('django.conf.urls.i18n')),
+)
+if 'rosetta' in settings.INSTALLED_APPS:
+    urlpatterns += [
+        path('rosetta/', include('rosetta.urls'))
+    ]
