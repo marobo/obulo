@@ -60,14 +60,6 @@
 
         <!-- Right elements -->
         <div class="d-flex align-items-center">
-            {% if user.is_authenticated %}
-            Welcome {{ user.first_name|default:user.username }} |
-            <a class="btn btn-outline-primary btn-sm" href="{% url 'logout' %}">Log out</a>
-            {% else %}
-            <a class="btn btn-outline-primary btn-sm" href="{% url 'create_account' %}">Sign up</a> |
-            <a class="btn btn-primary btn-sm" href="{% url 'login' %}">Sign in</a>
-            {% endif %}
-
             <form action="{% url 'set_language' %}" method="post" id="form_{{ LANGUAGE_CODE|new_lang_code }}">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}"/>
