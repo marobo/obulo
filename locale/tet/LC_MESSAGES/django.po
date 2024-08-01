@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-30 15:30+0900\n"
-"PO-Revision-Date: 2024-07-30 17:18+0900\n"
+"POT-Creation-Date: 2024-08-01 11:34+0900\n"
+"PO-Revision-Date: 2024-08-01 11:42+0900\n"
 "Last-Translator:   <>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -18,124 +18,35 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Translated-Using: django-rosetta 0.10.0\n"
 
-msgid "Registration page"
-msgstr ""
+msgid "Aldeias"
+msgstr "Aldeia sira"
 
-msgid "You have logged out!"
-msgstr "Pájina registrasaun"
+msgid "All Aldeias in suco Obulo"
+msgstr "Aldeia sira iha suku Obulo"
 
-msgid "Thanks for spending some quality time with the Web site today."
-msgstr ""
+msgid "Coming soon...!"
+msgstr "Coming soon...!"
 
-msgid "Log in again?"
-msgstr ""
+msgid "Nature & Tourism"
+msgstr "Natureza & Turizmu"
 
-msgid "Please Log In"
-msgstr ""
+msgid "Nature & Tourism in suco Obulo"
+msgstr "Natureza & Turizmu iha suku Obulo"
 
-#, python-format
-msgid ""
-"You are authenticated as %(username)s, but are not authorized to access this"
-" page. Would you like to login to a different account?"
-msgstr ""
+msgid "People & Culture"
+msgstr "Ema & Kultura"
 
-msgid "Log in"
-msgstr ""
+msgid "Pople & Culture in suco Obulo"
+msgstr "Ema & Kultura iha suco Obulo"
 
-msgid "Forgotten your password or username?"
-msgstr ""
+msgid "Information about Obulo - Let's bring our suco to the world"
+msgstr "Informasaun kona-ba Obulo - Mai ita lori ita-nia suku ba mundu"
 
-msgid "Change password successful!"
-msgstr ""
+msgid "About"
+msgstr "Kona-ba"
 
-msgid "Your password was changed."
-msgstr ""
+msgid "Welcome to suco Obulo"
+msgstr "Benvindu mai suku Obulo"
 
-msgid "Back"
-msgstr ""
-
-msgid "Change your password"
-msgstr ""
-
-msgid "Please correct the error below."
-msgstr ""
-
-msgid "Please correct the errors below."
-msgstr ""
-
-msgid ""
-"Please enter your old password, for security's sake, and then enter your new"
-" password twice so we can verify you typed it in correctly."
-msgstr ""
-
-msgid "Reset password successful!"
-msgstr ""
-
-msgid "Your password has been set. You may go ahead and log in now."
-msgstr ""
-
-msgid "Choose a new password"
-msgstr ""
-
-msgid ""
-"Please enter your new password twice so we can verify you typed it in "
-"correctly."
-msgstr ""
-
-msgid ""
-"The password reset link was invalid, possibly because it has already been "
-"used.  Please request a new password reset."
-msgstr ""
-
-msgid "Please check your email!"
-msgstr ""
-
-msgid ""
-"We've emailed you instructions for setting your password, if an account "
-"exists with the email you entered. You should receive them shortly."
-msgstr ""
-
-msgid ""
-"If you don't receive an email, please make sure you've entered the address "
-"you registered with, and check your spam folder."
-msgstr ""
-
-#, python-format
-msgid ""
-"You're receiving this email because you requested a password reset for your "
-"user account at %(site_name)s."
-msgstr ""
-
-msgid "Please go to the following page and choose a new password:"
-msgstr ""
-
-msgid "Your username, in case you've forgotten:"
-msgstr ""
-
-msgid "Thanks for using our site!"
-msgstr ""
-
-#, python-format
-msgid "The %(site_name)s team"
-msgstr ""
-
-msgid "Reset your password"
-msgstr ""
-
-msgid ""
-"Forgotten your password? Enter your email address below, and we'll email "
-"instructions for setting a new one."
-msgstr ""
-
-#, python-format
-msgid "Password reset on %(site_name)s"
-msgstr ""
-
-msgid "Create your new account"
-msgstr ""
-
-msgid "This username already exist"
-msgstr ""
-
-msgid "Create new account"
-msgstr ""
+#~ msgid "You have logged out!"
+#~ msgstr "Pájina registrasaun"

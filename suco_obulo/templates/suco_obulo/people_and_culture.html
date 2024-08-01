@@ -1,16 +1,18 @@
 {% extends base_template %}
 
+{% load i18n %}
+
 {% block title %}
     <title>People & Culture</title>
 {% endblock %}
 
 {% block content %}
-    <h2 class="page-title">Pople & Culture</h2>
-    <p>Pople & Culture in suco Obulo</p>
-    <p>Coming soon...!</p>
+    <h2 class="page-title">{% trans 'People & Culture' %}</h2>
+    <p>{% trans 'Pople & Culture in suco Obulo' %}</p>
+    <p>{% trans 'Coming soon...!' %}</p>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.page.name == 'People & Culture' %}
+        {% if post.page.name == 'People & Culture' or post.page.name == 'Ema & Kultura' %}
         <div class="row">
             <div class="col-md-6">
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">

@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+
+{% load i18n %}
 {% load language_selector %}
 
 {% block header %}
@@ -21,7 +23,7 @@
                         hx-target="#index-content"
                         hx-push-url="true"
                     >
-                        About
+                        {% trans 'About' %}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -31,7 +33,7 @@
                         hx-target="#index-content"
                         hx-push-url="true"
                     >
-                        Nature & Tourism
+                        {% trans 'Nature & Tourism' %}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -41,7 +43,7 @@
                         hx-target="#index-content"
                         hx-push-url="true"
                     >
-                        People & Culture
+                        {% trans 'People & Culture' %}
                     </a>
                 </li>
                 <li class="nav-item">
@@ -51,7 +53,7 @@
                         hx-target="#index-content"
                         hx-push-url="true"
                     >
-                        Aldeias
+                        {% trans 'Aldeias' %}
                     </a>
                 </li>
             </ul>
