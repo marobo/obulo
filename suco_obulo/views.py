@@ -26,6 +26,19 @@ def index(request):
     return render(request, 'index.html', context)
 
 
+def about_view(request):
+
+    base_template = _base_template(request)
+    posts = Post.objects.all().order_by('created_on')
+
+    context = {
+        'base_template': base_template,
+        'posts': posts,
+    }
+
+    return render(request, 'suco_obulo/about.html', context)
+
+
 def aldeias_view(request):
 
     base_template = _base_template(request)
