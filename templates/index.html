@@ -4,17 +4,21 @@
 {% load static %}
 
 {% block title %}
-    <title>Suco Obulo</title>
+    <title>{% trans 'Welcome to Obulo' %}</title>
 {% endblock %}
 
 {% block content %}
     <h2 class="page-title">{% trans 'Welcome to Obulo' %}</h2>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.page.name == 'About' or post.page.name == 'Kona-ba' %}
+        {% if post.page.name == 'Home' or post.page.name == 'Uma' %}
         <div class="row">
             <div class="col-md-6">
+                {% if post.image %}
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                {% else %}
+                <p>{% trans 'No image found' %}</p>
+                {% endif %}
             </div>
             <div class="col-md-6">
                 <h5>{{ post.title }}</h5>

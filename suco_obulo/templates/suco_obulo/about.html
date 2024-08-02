@@ -3,16 +3,16 @@
 {% load i18n %}
 
 {% block title %}
-    <title>{% trans 'Nature & Tourism' %}</title>
+    <title>{% trans 'About' %}</title>
 {% endblock %}
 
 {% block content %}
-    <h2 class="page-title">{% trans 'Nature & Tourism' %}</h2>
-    <p>{% trans 'Nature & Tourism in suco Obulo' %}</p>
+    <h2 class="page-title">{% trans 'About' %}</h2>
+    <p>{% trans 'About page content' %}</p>
     <p>{% trans 'Coming soon...!' %}</p>
     <div class="obulo">
     {% for post in posts %}
-        {% if post.page.name == 'Nature & Tourism' or post.page.name == 'Natureza & Turizmu' %}
+        {% if post.page.name == 'About' or post.page.name == 'Kona-ba' %}
         <div class="row">
             <div class="col-md-6">
                 {% if post.image %}

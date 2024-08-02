@@ -3,7 +3,7 @@
 {% load i18n %}
 
 {% block title %}
-    <title>People & Culture</title>
+    <title>{% trans 'People & Culture' %}</title>
 {% endblock %}
 
 {% block content %}
@@ -15,7 +15,11 @@
         {% if post.page.name == 'People & Culture' or post.page.name == 'Ema & Kultura' %}
         <div class="row">
             <div class="col-md-6">
+                {% if post.image %}
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                {% else %}
+                <p>{% trans 'No image found' %}</p>
+                {% endif %}
             </div>
             <div class="col-md-6">
                 <h5>{{ post.title }}</h5>
