@@ -15,7 +15,7 @@
         <div class="row">
             <div class="col-md-6">
                 {% if post.image %}
-                <img src="{{ post.image.url }}" title="test" alt="{{ post.title }}">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
                 {% else %}
                 <p>{% trans 'No image found' %}</p>
                 {% endif %}
