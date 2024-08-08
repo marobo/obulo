@@ -8,23 +8,24 @@
 
 {% block content %}
     <h2 class="page-title">{% trans 'About' %}</h2>
-    <p>{% trans 'About page content' %}</p>
-    <p>{% trans 'Coming soon...!' %}</p>
     <div class="obulo">
     {% for post in posts %}
         {% if post.page.name == 'About' or post.page.name == 'Kona-ba' %}
         <div class="row">
+            {% if post.image %}
             <div class="col-md-6">
-                {% if post.image %}
                 <img src="{{ post.image.url }}" alt="{{ post.title }}">
-                {% else %}
-                <p>{% trans 'No image found' %}</p>
-                {% endif %}
             </div>
             <div class="col-md-6">
                 <h5>{{ post.title }}</h5>
                 <p>{{ post.overview }}</p>
             </div>
+            {% else %}
+            <div class="col-md-12">
+                <h5>{{ post.title }}</h5>
+                <p>{{ post.overview }}</p>
+            </div>
+            {% endif %}
         </div>
         {% endif %}
     {% endfor %}
