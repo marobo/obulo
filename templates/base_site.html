@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% load i18n %}
+{% load static %}
 {% load language_selector %}
 
 {% block header %}
@@ -61,13 +62,15 @@
         <!-- Collapsible wrapper -->
 
         <!-- Right elements -->
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center change-language">
             <form action="{% url 'set_language' %}" method="post" id="form_{{ LANGUAGE_CODE|new_lang_code }}">
                 {% csrf_token %}
                 <input name="next" type="hidden" value="{{ redirect_to }}"/>
                 <input name="language" type="hidden" value="{{ LANGUAGE_CODE|new_lang_code }}"/>
             </form>
-            <button class="btn btn-sm btn-outline-success" type="submit" form="form_{{ LANGUAGE_CODE|new_lang_code }}" value="Submit">{{ LANGUAGE_CODE|new_lang_name }}</button>
+            <button type="submit" form="form_{{ LANGUAGE_CODE|new_lang_code }}" value="Submit">
+                <img src="/static/img/{{ LANGUAGE_CODE|new_lang_code }}.svg" type="submit" alt="{{ LANGUAGE_CODE|new_lang_name }}">
+            </button>
         </div>
     </div>
 </nav>
