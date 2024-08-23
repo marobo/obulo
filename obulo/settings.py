@@ -45,7 +45,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'suco_obulo',
     'rosetta',
+    'django_summernote',
 ]
+
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
