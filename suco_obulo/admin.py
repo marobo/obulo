@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from modeltranslation.admin import TranslationAdmin
 from .models import Post, Page
 
@@ -10,7 +11,8 @@ class PoageAdmin(TranslationAdmin):
     ]
 
 
-class PostAdmin(TranslationAdmin):
+class PostAdmin(SummernoteModelAdmin, TranslationAdmin):
+    summernote_fields = ('overview',)
     list_display = ('title', 'page', 'author',)
     fieldsets = [
         (None, {'fields': [('title', 'overview', 'image', 'page',)]}),
