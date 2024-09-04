@@ -12,12 +12,8 @@
 
         <meta name="description" content="{% trans "Information about Obulo - Let's promote our suco to the world" %}">
         <meta name="keywords" content="Obulo">
-        {% for post in posts %}
-            {% if post.image %}
-            <meta property="og:image" content="https://obulo.pythonanywhere.com{{ post.image.url }}">
-            <meta property="twitter:image" content="https://obulo.pythonanywhere.com{{ post.image.url }}">
-            {% endif %}
-        {% endfor %}
+        <meta property="og:image" content="https://obulo.pythonanywhere.com{{ post.image.url }}">
+        <meta property="twitter:image" content="https://obulo.pythonanywhere.com{{ post.image.url }}">
         <meta property="og:title" content="{{ post.title }}" />
         <meta property="twitter:title" content="{{ post.title }}" />
         <meta name="twitter:card" content="summary_large_image">
