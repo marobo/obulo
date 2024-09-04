@@ -28,6 +28,16 @@ img {
     margin-bottom: 2rem;
 }
 
+.post-detail {
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.post-detail > .btn {
+    margin-bottom: 10px;
+
+}
+
 .navbar {
     background-color: aliceblue;
 }

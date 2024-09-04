@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 16:51+0900\n"
-"PO-Revision-Date: 2024-08-02 16:54+0900\n"
-"Last-Translator:   <>\n"
+"POT-Creation-Date: 2024-09-04 16:40+0900\n"
+"PO-Revision-Date: 2024-09-04 16:41+0900\n"
+"Last-Translator:   <dejeusony@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -21,30 +21,23 @@ msgstr ""
 msgid "About"
 msgstr "Kona-ba"
 
-msgid "About page content"
-msgstr "konteúdu pájina kona-ba"
-
-msgid "Coming soon...!"
-msgstr "Coming soon...!"
-
 msgid "Aldeias"
 msgstr "Aldeia sira"
 
-#| msgid "All Aldeias in suco Obulo"
-msgid "Aldeias in suco Obulo"
-msgstr "Aldeia sira iha suku Obulo"
+msgid "No image found"
+msgstr "Imajen laiha"
+
+msgid "Show me more"
+msgstr "Hatudu barak"
+
+msgid "Back"
+msgstr "Fila"
 
 msgid "Nature & Tourism"
 msgstr "Natureza & Turizmu"
 
-msgid "Nature & Tourism in suco Obulo"
-msgstr "Natureza & Turizmu iha suku Obulo"
-
 msgid "People & Culture"
 msgstr "Ema & Kultura"
-
-msgid "Pople & Culture in suco Obulo"
-msgstr "Ema & Kultura iha suco Obulo"
 
 msgid "Information about Obulo - Let's promote our suco to the world"
 msgstr "Informasaun kona-ba Obulo - Mai ita promove ita-nia suku ba mundu"
@@ -52,8 +45,20 @@ msgstr "Informasaun kona-ba Obulo - Mai ita promove ita-nia suku ba mundu"
 msgid "Welcome to Obulo"
 msgstr "Benvindu mai Obulo"
 
-msgid "No image found"
-msgstr "Imajen laiha"
+#~ msgid "About page content"
+#~ msgstr "konteúdu pájina kona-ba"
+
+#~ msgid "Coming soon...!"
+#~ msgstr "Coming soon...!"
+
+#~ msgid "Aldeias in suco Obulo"
+#~ msgstr "Aldeia sira iha suku Obulo"
+
+#~ msgid "Nature & Tourism in suco Obulo"
+#~ msgstr "Natureza & Turizmu iha suku Obulo"
+
+#~ msgid "Pople & Culture in suco Obulo"
+#~ msgstr "Ema & Kultura iha suco Obulo"
 
 #~ msgid "You have logged out!"
 #~ msgstr "Pájina registrasaun"
