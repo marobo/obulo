@@ -21,7 +21,16 @@
             </div>
             <div class="col-md-6">
                 <h5>{{ post.title }}</h5>
-                <p>{{ post.overview|safe }}</p>
+                <p>{{ post.overview|safe|truncatewords_html:125 }}</p>
+                <a class="btn btn-outline-success"
+                    hx-get="{% url 'post_detail' post.pk %}"
+                    hx-swap="outerHTML"
+                    hx-target="#index-content"
+                    hx-push-url="true"
+                >
+                    {% trans 'Show me more' %}
+                    <span>&#8594;</span>
+                </a>
             </div>
         </div>
         {% endif %}

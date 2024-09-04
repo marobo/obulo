@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
 from .models import Post
 
@@ -76,3 +77,15 @@ def people_and_culture_view(request):
     }
 
     return render(request, 'suco_obulo/people_and_culture.html', context)
+
+
+def post_detail_view(request, pk):
+
+    base_template = _base_template(request)
+    post = get_object_or_404(Post, pk=pk)
+
+    context = {
+        'base_template': base_template,
+        'post': post,
+    }
+    return render(request, 'suco_obulo/post_detail.html', context)

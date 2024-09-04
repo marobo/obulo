@@ -10,4 +10,5 @@ urlpatterns = [
     path('aldeias', views.aldeias_view, name='aldeias'),
     path('nature-tourism', views.nature_and_tourism_view, name='nature_and_tourism'),
     path('people-culture', views.people_and_culture_view, name='people_and_culture'),
+    path('post/<int:pk>/', views.post_detail_view, name='post_detail'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

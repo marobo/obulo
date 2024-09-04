@@ -1,0 +1,22 @@
+{% extends base_template %}
+
+{% load i18n %}
+
+{% block title %}
+    <title>{{ post.title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="post-detail">
+    {% include 'suco_obulo/back_button.html' %}
+    <h1>{{ post.title }}</h1>
+    {% if post.image %}
+        <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% else %}
+        <p>{% trans 'No image found' %}</p>
+    {% endif %}
+    <p>{{ post.overview|safe }}</p>
+    <p class="text-muted">Created on: {{ post.created_on }}</p>
+    <p class="text-muted">Last updated: {{ post.modified_on }}</p>
+</div>
+{% endblock %}
