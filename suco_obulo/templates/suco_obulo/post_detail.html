@@ -16,7 +16,7 @@
         <p>{% trans 'No image found' %}</p>
     {% endif %}
     <p>{{ post.overview|safe }}</p>
-    <p class="text-muted">Created on: {{ post.created_on }}</p>
-    <p class="text-muted">Last updated: {{ post.modified_on }}</p>
+    <p class="text-muted">{% trans 'Created on' %}: {{ post.created_on }}</p>
+    <p class="text-muted">{% trans 'Last updated' %}: {{ post.modified_on }}</p>
 </div>
 {% endblock %}

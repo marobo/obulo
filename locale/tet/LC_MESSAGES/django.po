@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-04 16:40+0900\n"
-"PO-Revision-Date: 2024-09-04 16:41+0900\n"
+"POT-Creation-Date: 2024-09-05 11:17+0900\n"
+"PO-Revision-Date: 2024-09-05 11:17+0900\n"
 "Last-Translator:   <dejeusony@gmail.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -38,6 +38,12 @@ msgstr "Natureza & Turizmu"
 
 msgid "People & Culture"
 msgstr "Ema & Kultura"
+
+msgid "Created on"
+msgstr "Kria iha"
+
+msgid "Last updated"
+msgstr "Atualiza ikus"
 
 msgid "Information about Obulo - Let's promote our suco to the world"
 msgstr "Informasaun kona-ba Obulo - Mai ita promove ita-nia suku ba mundu"
