@@ -1,0 +1,10 @@
+{% load i18n %}
+
+<h2 class="page-title">{% trans page_title %}</h2>
+<div class="obulo">
+    {% for post in posts %}
+        {% if post.page.name == page_name or post.page.name == page_name_tetum %}
+            {% include 'suco_obulo/post_list.html' %}
+        {% endif %}
+    {% endfor %}
+</div>
