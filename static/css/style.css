@@ -62,3 +62,12 @@ img {
     width: 25px;
     height: 25px;
 }
+
+@media (min-width: 768px) { /* Medium devices and up (tablets and desktops) */
+    .obulo .row:nth-child(odd) .image-column {
+        order: 2; /* Move the image column to the right */
+    }
+    .obulo .row:nth-child(odd) .text-column {
+        order: 1; /* Move the text column to the left */
+    }
+}

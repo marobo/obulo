@@ -12,14 +12,14 @@
     {% for post in posts %}
         {% if post.page.name == 'Aldeias' or post.page.name == 'Aldeia sira' %}
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-12 col-md-6 image-column">
                 {% if post.image %}
-                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                    <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-fluid">
                 {% else %}
-                <p>{% trans 'No image found' %}</p>
+                    <p>{% trans 'No image found' %}</p>
                 {% endif %}
             </div>
-            <div class="col-md-6">
+            <div class="col-12 col-md-6 text-column">
                 <h5>{{ post.title }}</h5>
                 <p>{{ post.overview|safe|truncatewords_html:125 }}</p>
                 <a class="btn btn-outline-success"
