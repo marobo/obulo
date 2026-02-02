@@ -4,7 +4,6 @@ services:
     container_name: obulo_web
     volumes:
       - .:/app
-      - media_data:/app/media  # persist uploaded media across container rebuilds
     env_file:
       - .env
     restart: always
@@ -16,9 +15,6 @@ services:
       - "traefik.http.routers.obulo.entrypoints=websecure"
       - "traefik.http.routers.obulo.tls.certresolver=letsencrypt"
       - "traefik.http.services.obulo.loadbalancer.server.port=8000"
-
-volumes:
-  media_data:
 
 networks:
   proxy:

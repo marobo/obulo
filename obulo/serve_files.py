@@ -10,8 +10,8 @@ from django.http import FileResponse, Http404
 def _serve_from_root(request, path, root_setting):
     """Serve a file from a root dir. Path must be relative; no directory traversal."""
     root = os.path.abspath(root_setting)
-    path = path.lstrip("/")
-    if ".." in path or path.startswith("/"):
+    path = (path or "").strip().lstrip("/")
+    if not path or ".." in path:
         raise Http404("Invalid path")
     file_path = os.path.normpath(os.path.join(root, path))
     file_path = os.path.abspath(file_path)
