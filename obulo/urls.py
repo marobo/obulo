@@ -41,6 +41,7 @@ urlpatterns = list(urlpatterns) + list(
         path("i18n/", include("django.conf.urls.i18n")),
         path("summernote/", include("django_summernote.urls")),
         path("", include("suco_obulo.urls")),
+        prefix_default_language=False,
     )
 )
 if "rosetta" in settings.INSTALLED_APPS:
