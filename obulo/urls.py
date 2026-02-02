@@ -16,17 +16,34 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.conf import settings
+from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
-from django.urls import path, include
+from django.urls import path, include, re_path
 
+from obulo.serve_files import serve_static, serve_media
 
-urlpatterns = i18n_patterns(
-    path('admin/', admin.site.urls),
-    path('', include('suco_obulo.urls')),
-    path('i18n/', include('django.conf.urls.i18n')),
-    path('summernote/', include('django_summernote.urls')),
+# Static and media MUST be at the top so /static/ and /media/ are matched
+# before i18n_patterns(path('', include(...))) catches everything.
+if settings.DEBUG:
+    urlpatterns = (
+        static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+        + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    )
+else:
+    urlpatterns = [
+        re_path(r"^static/(?P<path>.*)$", serve_static),
+        re_path(r"^media/(?P<path>.*)$", serve_media),
+    ]
+
+urlpatterns = list(urlpatterns) + list(
+    i18n_patterns(
+        path("admin/", admin.site.urls),
+        path("", include("suco_obulo.urls")),
+        path("i18n/", include("django.conf.urls.i18n")),
+        path("summernote/", include("django_summernote.urls")),
+    )
 )
-if 'rosetta' in settings.INSTALLED_APPS:
+if "rosetta" in settings.INSTALLED_APPS:
     urlpatterns += [
-        path('rosetta/', include('rosetta.urls'))
+        path("rosetta/", include("rosetta.urls")),
     ]
