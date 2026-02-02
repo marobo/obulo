@@ -1,0 +1,21 @@
+services:
+  web:
+    build: .
+    container_name: obulo_web
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    restart: always
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.obulo.rule=Host(`obulo.onorio.dev`)"
+      - "traefik.http.routers.obulo.entrypoints=websecure"
+      - "traefik.http.routers.obulo.tls.certresolver=letsencrypt"
+      - "traefik.http.services.obulo.loadbalancer.server.port=8000"
+
+networks:
+  proxy:
+    external: true
