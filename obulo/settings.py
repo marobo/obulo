@@ -33,6 +33,11 @@ ALLOWED_HOSTS = [
     host.strip() for host in config("ALLOWED_HOSTS", "").split(",") if host.strip()
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://obulo.onorio.dev",
+    "https://www.obulo.onorio.dev",
+]
+
 
 # Application definition
 
