@@ -38,9 +38,9 @@ else:
 urlpatterns = list(urlpatterns) + list(
     i18n_patterns(
         path("admin/", admin.site.urls),
-        path("", include("suco_obulo.urls")),
         path("i18n/", include("django.conf.urls.i18n")),
         path("summernote/", include("django_summernote.urls")),
+        path("", include("suco_obulo.urls")),
     )
 )
 if "rosetta" in settings.INSTALLED_APPS:
