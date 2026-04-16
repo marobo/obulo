@@ -2,6 +2,8 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from django.urls import re_path
+from django.views.static import serve
 
 
 urlpatterns = [
@@ -11,4 +13,11 @@ urlpatterns = [
     path('nature-tourism', views.nature_and_tourism_view, name='nature_and_tourism'),
     path('people-culture', views.people_and_culture_view, name='people_and_culture'),
     path('post/<int:pk>/', views.post_detail_view, name='post_detail'),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+else:
+    urlpatterns += [
+        re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
+    ]
