@@ -1,5 +1,11 @@
 a, a:not([href]):not([class]) {
-    color: blue;
+    color: #959525db;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #7a7a1e;
     text-decoration: none;
     cursor: pointer;
 }
