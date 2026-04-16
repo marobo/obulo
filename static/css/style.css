@@ -63,6 +63,22 @@ img {
     height: 25px;
 }
 
+.footer {
+    background-color: rgb(240 248 255);
+    color: #6c757d!important;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #6c757d!important;
+    margin-bottom: 10px;
+}
+
 @media (min-width: 768px) { /* Medium devices and up (tablets and desktops) */
     .obulo .row:nth-child(odd) .image-column {
         order: 2; /* Move the image column to the right */
