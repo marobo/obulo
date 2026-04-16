@@ -4,6 +4,8 @@ services:
     container_name: obulo_web
     volumes:
       - .:/app
+      - ./media:/app/media
+      - ./static:/app/static
     env_file:
       - .env
     restart: always

@@ -1,5 +1,11 @@
 a, a:not([href]):not([class]) {
-    color: blue;
+    color: #959525db;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover {
+    color: #7a7a1e;
     text-decoration: none;
     cursor: pointer;
 }
@@ -61,6 +67,22 @@ img {
 .change-language > button > img {
     width: 25px;
     height: 25px;
+}
+
+.footer {
+    background-color: rgb(240 248 255);
+    color: #6c757d!important;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.footer .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    color: #6c757d!important;
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px) { /* Medium devices and up (tablets and desktops) */
