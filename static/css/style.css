@@ -12,11 +12,29 @@ a:hover {
 
 img {
     max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.img-cover {
     width: 100%;
     height: 500px;
-    object-position: center;
     object-fit: cover;
-    border-radius: 0px;
+    object-position: center;
+}
+
+.logo-obulo {
+    width: 30px;
+    height: 30px;
+}
+
+.brand-obulo {
+    font-size: 30px;
+    font-weight: bold;
+    display: flex;
+    flex-wrap: inherit;
+    align-items: center;
+    color: #a2a447;
 }
 
 .page-title {
