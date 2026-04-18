@@ -4,24 +4,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-
-        {% block title %}
-        {% endblock %}
-
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{% trans "Let's promote our suco to the world" %}">
+        <meta name="keywords" content="{% trans "Suco Obulo, Suku Obulo, Obulo, Atsabe, Timor-Leste, Cultural, Traditional, Nature and Tourism, Heritage" %}">
+        <meta name="author" content="Onório de Jesus">
+        <meta name="robots" content="index, follow">
 
-        <meta name="description" content="{% trans "Information about Obulo - Let's promote our suco to the world" %}">
-        <meta name="keywords" content="Obulo">
-        {% if post %}
-        <meta property="og:title" content="{{ post.title }}" />
-        <meta property="twitter:title" content="{{ post.title }}" />
-        {% if post.image %}
-        <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{{ post.image.url }}">
-        <meta property="twitter:image" content="{{ request.scheme }}://{{ request.get_host }}{{ post.image.url }}">
+        <link rel="canonical" href="https://obulo.onorio.dev/">
+
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:site_name" content="Obulo">
+        <meta property="og:title" content="Suco Obulo">
+        <meta property="og:description" content="{% trans "Let's promote our suco to the world" %}">
+        <meta property="og:type" content="website">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:url" content="https://obulo.onorio.dev/">
+        <meta property="og:image" content="https://obulo.onorio.dev/media/obulo_images/lokal_market.jpg">
+
+        <!-- Twitter Meta Tags -->
+        <meta name="twitter:site" content="@AfonsoOnorio">
+        <meta name="twitter:creator" content="@AfonsoOnorio">
         <meta name="twitter:card" content="summary_large_image">
-        {% endif %}
-        <meta property="og:type" content="website" />
-        {% endif %}
+        <meta name="twitter:title" content="Suco Obulo">
+        <meta name="twitter:description" content="{% trans "Let's promote our suco to the world" %}">
+        <meta name="twitter:image" content="https://obulo.onorio.dev/media/obulo_images/lokal_market.jpg">
 
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">
@@ -45,9 +52,13 @@
             gtag('config', '{{ G_ANALYTIC_CODE }}');
         </script>
 
+        {% block title %}
+        {% endblock %}
+
     </head>
 
     <body class="d-flex flex-column min-vh-100">
+        <div id="hx-loading-bar" class="hx-loading-bar" aria-hidden="true"></div>
         {% block header %}
         {% endblock %}
 
@@ -63,7 +74,19 @@
             /* HTMX Support */
             document.body.addEventListener('htmx:configRequest', (event) => {
                 event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
-            })
+            });
+
+            (function () {
+                const bar = document.getElementById('hx-loading-bar');
+                let inflight = 0;
+                document.body.addEventListener('htmx:beforeRequest', () => {
+                    if (inflight++ === 0) bar.classList.add('is-active');
+                });
+                document.body.addEventListener('htmx:afterRequest', () => {
+                    inflight = Math.max(0, inflight - 1);
+                    if (inflight === 0) bar.classList.remove('is-active');
+                });
+            })();
 
             /* Back button */
             function goBack() {

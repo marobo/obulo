@@ -111,3 +111,47 @@ img {
         order: 1; /* Move the text column to the left */
     }
 }
+
+/* HTMX in-flight indicator */
+.hx-loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    z-index: 2000;
+    pointer-events: none;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.hx-loading-bar.is-active {
+    opacity: 1;
+}
+
+.hx-loading-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%;
+    background: #959525;
+    transform: translateX(-100%);
+    animation: hx-loading-slide 0.9s ease-in-out infinite;
+    animation-play-state: paused;
+}
+
+.hx-loading-bar.is-active::after {
+    animation-play-state: running;
+}
+
+@keyframes hx-loading-slide {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(400%);
+    }
+}
