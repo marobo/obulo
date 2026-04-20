@@ -1,0 +1,11 @@
+{% extends base_template %}
+
+{% load i18n %}
+
+{% block title %}
+    <title>{% trans page_title %}</title>
+{% endblock %}
+
+{% block content %}
+    {% include 'suco_obulo/post_list_page.html' with posts=posts page_title=page_title page_name=page_name page_name_tetum=page_name_tetum %}
+{% endblock %}

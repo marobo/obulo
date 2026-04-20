@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404, render
 
 from .models import Post
 
@@ -7,14 +6,11 @@ from .models import Post
 def _base_template(request):
 
     if request.htmx:
-        base_template = 'base_site_htmx.html'
-    else:
-        base_template = 'base_site.html'
-
-    return base_template
+        return 'base_site_htmx.html'
+    return 'base_site.html'
 
 
-def index(request):
+def page(request, template_name, **kwargs):
 
     base_template = _base_template(request)
     posts = Post.objects.all().order_by('created_on')
@@ -22,61 +18,10 @@ def index(request):
     context = {
         'base_template': base_template,
         'posts': posts,
+        **kwargs,
     }
 
-    return render(request, 'index.html', context)
-
-
-def about_view(request):
-
-    base_template = _base_template(request)
-    posts = Post.objects.all().order_by('created_on')
-
-    context = {
-        'base_template': base_template,
-        'posts': posts,
-    }
-
-    return render(request, 'suco_obulo/about.html', context)
-
-
-def aldeias_view(request):
-
-    base_template = _base_template(request)
-    posts = Post.objects.all().order_by('created_on')
-
-    context = {
-        'base_template': base_template,
-        'posts': posts,
-    }
-
-    return render(request, 'suco_obulo/aldeias.html', context)
-
-
-def nature_and_tourism_view(request):
-
-    base_template = _base_template(request)
-    posts = Post.objects.all().order_by('created_on')
-
-    context = {
-        'base_template': base_template,
-        'posts': posts,
-    }
-
-    return render(request, 'suco_obulo/nature_and_tourism.html', context)
-
-
-def people_and_culture_view(request):
-
-    base_template = _base_template(request)
-    posts = Post.objects.all().order_by('created_on')
-
-    context = {
-        'base_template': base_template,
-        'posts': posts,
-    }
-
-    return render(request, 'suco_obulo/people_and_culture.html', context)
+    return render(request, template_name, context)
 
 
 def post_detail_view(request, pk):
