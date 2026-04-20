@@ -8,18 +8,19 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy application (includes submodules if any)
+# 🔥 Copy ONLY requirements first (important!)
+COPY requirements.txt .
+
+# Install Python dependencies (cached layer)
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Now copy the rest of your app
 COPY . .
 
-# Install Python dependencies
-RUN find . -name "requirements.txt" -exec pip install --no-cache-dir -r {} \;
-
 # Make entrypoint executable
-COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
 EXPOSE 8000
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "obulo.wsgi:application"]
-
