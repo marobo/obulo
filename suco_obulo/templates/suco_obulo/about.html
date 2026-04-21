@@ -2,32 +2,49 @@
 
 {% load i18n %}
 
+{% block og_meta_tags %}
+{% for post in posts %}
+    {% if post.page.name == 'About' or post.page.name == 'Kona-ba' %}
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:description" content="{{ post.overview|striptags }}">
+    <meta property="og:url" content="https://obulo.onorio.dev/{{ post.page.slug }}/">
+    <meta property="og:image" content="{{ post.image.url }}">
+    {% endif %}
+{% endfor %}
+{% endblock %}
+
+{% block twitter_meta_tags %}
+{% for post in posts %}
+    {% if post.page.name == 'About' or post.page.name == 'Kona-ba' %}
+    <meta name="twitter:title" content="{{ post.title }}">
+    <meta name="twitter:description" content="{{ post.overview|striptags }}">
+    <meta name="twitter:image" content="{{ post.image.url }}">
+    {% endif %}
+{% endfor %}
+{% endblock %}
+
 {% block title %}
-    <title>{% trans 'About' %}</title>
+{% for post in posts %}
+    {% if post.page.name == 'About' or post.page.name == 'Kona-ba' %}
+    <title>{{ post.title }}</title>
+    {% endif %}
+{% endfor %}
 {% endblock %}
 
 {% block content %}
-    <h2 class="page-title">{% trans 'About' %}</h2>
-    <div class="obulo">
-    {% for post in posts %}
-        {% if post.page.name == 'About' or post.page.name == 'Kona-ba' %}
-        <div class="row">
-            {% if post.image %}
-            <div class="col-md-6">
-                <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-cover">
-            </div>
-            <div class="col-md-6">
-                <h5>{{ post.title }}</h5>
-                <p>{{ post.overview|safe }}</p>
-            </div>
-            {% else %}
-            <div class="col-md-12">
-                <h5>{{ post.title }}</h5>
-                <p>{{ post.overview|safe }}</p>
-            </div>
-            {% endif %}
+{% for post in posts %}
+    {% if post.page.name == 'About' or post.page.name == 'Kona-ba' %}
+    <div class="row">
+        {% if post.image %}
+        <div class="col-md-6">
+            <img src="{{ post.image.url }}" alt="{{ post.title }}" class="img-cover">
         </div>
         {% endif %}
-    {% endfor %}
+        <div class="col-md-6">
+            <h2 class="page-title">{{ post.title }}</h2>
+            <p>{{ post.overview|safe }}</p>
+        </div>
     </div>
+    {% endif %}
+{% endfor %}
 {% endblock %}

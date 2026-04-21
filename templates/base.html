@@ -15,20 +15,17 @@
 
         <!-- Open Graph Meta Tags -->
         <meta property="og:site_name" content="Obulo">
-        <meta property="og:title" content="Suco Obulo">
-        <meta property="og:description" content="{% trans "Let's promote our suco to the world" %}">
         <meta property="og:type" content="website">
         <meta property="og:locale" content="en_US">
-        <meta property="og:url" content="https://obulo.onorio.dev/">
-        <meta property="og:image" content="https://obulo.onorio.dev/media/obulo_images/lokal_market.jpg">
+        {% block og_meta_tags %}
+        {% endblock %}
 
         <!-- Twitter Meta Tags -->
         <meta name="twitter:site" content="@AfonsoOnorio">
         <meta name="twitter:creator" content="@AfonsoOnorio">
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:title" content="Suco Obulo">
-        <meta name="twitter:description" content="{% trans "Let's promote our suco to the world" %}">
-        <meta name="twitter:image" content="https://obulo.onorio.dev/media/obulo_images/lokal_market.jpg">
+        {% block twitter_meta_tags %}
+        {% endblock %}
 
         <link rel="apple-touch-icon" sizes="180x180" href="{% static 'img/apple-touch-icon.png' %}">
         <link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/favicon-32x32.png' %}">

@@ -3,6 +3,19 @@
 {% load i18n %}
 {% load static %}
 
+{% block og_meta_tags %}
+    <meta property="og:title" content="{% trans 'Welcome to Obulo' %}">
+    <meta property="og:description" content="{% trans "Let's promote our suco to the world" %}">
+    <meta property="og:url" content="https://obulo.onorio.dev/">
+    <meta property="og:image" content="https://obulo.onorio.dev/media/obulo_images/lokal_market.jpg">
+{% endblock %}
+
+{% block twitter_meta_tags %}
+    <meta name="twitter:title" content="{% trans 'Welcome to Obulo' %}">
+    <meta name="twitter:description" content="{% trans "Let's promote our suco to the world" %}">
+    <meta name="twitter:image" content="https://obulo.onorio.dev/media/obulo_images/lokal_market.jpg">
+{% endblock %}
+
 {% block title %}
     <title>{% trans 'Welcome to Obulo' %}</title>
 {% endblock %}

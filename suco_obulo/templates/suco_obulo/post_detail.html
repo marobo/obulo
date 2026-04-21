@@ -2,6 +2,19 @@
 
 {% load i18n %}
 
+{% block og_meta_tags %}
+    <meta property="og:title" content="{{ post.title }}">
+    <meta property="og:description" content="{{ post.overview|striptags }}">
+    <meta property="og:url" content="https://obulo.onorio.dev/{{ post.page.slug }}/">
+    <meta property="og:image" content="{{ post.image.url }}">
+{% endblock %}
+
+{% block twitter_meta_tags %}
+    <meta name="twitter:title" content="{{ post.title }}">
+    <meta name="twitter:description" content="{{ post.overview|striptags }}">
+    <meta name="twitter:image" content="{{ post.image.url }}">
+{% endblock %}
+
 {% block title %}
     <title>{{ post.title }}</title>
 {% endblock %}
