@@ -4,6 +4,7 @@ from django.conf.urls.static import static
 from . import views
 from django.urls import re_path
 from django.views.static import serve
+from django.utils.translation import gettext_lazy as _ # noqa
 
 
 urlpatterns = [
@@ -19,9 +20,7 @@ urlpatterns = [
         views.page,
         {
             'template_name': 'suco_obulo/section_page.html',
-            'page_title': 'Aldeias',
-            'page_name': 'Aldeias',
-            'page_name_tetum': 'Aldeia sira',
+            'page_name': _('Aldeias'),
         },
         name='aldeias',
     ),
@@ -30,9 +29,7 @@ urlpatterns = [
         views.page,
         {
             'template_name': 'suco_obulo/section_page.html',
-            'page_title': 'Nature & Tourism',
-            'page_name': 'Nature & Tourism',
-            'page_name_tetum': 'Natureza & Turizmu',
+            'page_name': _('Nature & Tourism'),
         },
         name='nature_and_tourism',
     ),
@@ -41,9 +38,7 @@ urlpatterns = [
         views.page,
         {
             'template_name': 'suco_obulo/section_page.html',
-            'page_title': 'People & Culture',
-            'page_name': 'People & Culture',
-            'page_name_tetum': 'Ema & Kultura',
+            'page_name': _('People & Culture'),
         },
         name='people_and_culture',
     ),
