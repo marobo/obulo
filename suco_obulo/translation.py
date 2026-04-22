@@ -3,7 +3,7 @@ from suco_obulo.models import Page, Post
 
 
 class PageTranslationOptions(TranslationOptions):
-    fields = ('name',)
+    fields = ('name', 'description',)
 
 
 class PostTranslationOptions(TranslationOptions):
