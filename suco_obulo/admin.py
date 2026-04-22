@@ -7,7 +7,7 @@ from .models import Post, Page
 class PoageAdmin(TranslationAdmin):
     list_display = ('name',)
     fieldsets = [
-        (None, {'fields': [('name',)]}),
+        (None, {'fields': [('name', 'description', 'image',)]}),
     ]
 
 

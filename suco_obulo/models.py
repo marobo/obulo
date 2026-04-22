@@ -7,6 +7,8 @@ from suco_obulo.thumbnail_img import make_thumbnail
 
 class Page(models.Model):
     name = models.CharField(max_length=128, unique=True)
+    description = models.TextField(blank=True, null=True)
+    image = models.ImageField(blank=True, null=True, upload_to="obulo_images/")
 
     def __str__(self):
         return self.name
